@@ -1,5 +1,5 @@
 //
-//  FizzBuzzTests.swift
+//  BrainTests.swift
 //  FizzBuzzTests
 //
 //  Created by ebdesk-066 on 15/06/19.
@@ -7,9 +7,8 @@
 //
 
 import XCTest
-@testable import FizzBuzz
 
-class FizzBuzzTests: XCTestCase {
+class BrainTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
