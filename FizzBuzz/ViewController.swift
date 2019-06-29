@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var gameScore: Int?
+    var game: Game?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        game = Game()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
+    func play(move: String) {
+        guard let unwrappedGame = game else { return }
+        
+        let response = unwrappedGame.play(move: move)
+        gameScore = response.score
+    }
 
 }
 
