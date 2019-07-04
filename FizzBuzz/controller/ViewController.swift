@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var fizzButton: UIButton!
     @IBOutlet var buzzButton: UIButton!
     @IBOutlet var fizzBuzzButton: UIButton!
+    @IBOutlet var playAgainButton: UIButton!
     
 
     var gameScore: Int? {
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         game = Game()
         guard let checkedGame = game else { return }
         gameScore = checkedGame.score
+        playAgainButton.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
         guard let unwrappedGame = game else { return }
         
         let response = unwrappedGame.play(move: move)
+        playAgainButton.isHidden = response.right
         gameScore = response.score
     }
 
@@ -56,5 +59,10 @@ class ViewController: UIViewController {
             print("Invalid selection")
         }
     }
+    
+    @IBAction func playAgainTapped(_ sender: UIButton) {
+        gameScore = 0
+    }
+    
 }
 

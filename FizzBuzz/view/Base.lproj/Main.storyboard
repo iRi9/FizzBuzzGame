@@ -20,10 +20,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-Jg-32r">
                                 <rect key="frame" x="260" y="607" width="99" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="playAgain"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="0.97254901960784312" green="0.95294117647058818" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Hw-JY-rrD"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVr-Ut-VYe">
                                 <rect key="frame" x="40" y="204" width="295" height="279"/>
@@ -114,6 +118,7 @@
                         <outlet property="fizzButton" destination="Or8-qm-yOR" id="kjo-Yg-bqo"/>
                         <outlet property="fizzBuzzButton" destination="nrR-04-hD3" id="vVG-lO-Agd"/>
                         <outlet property="numberButton" destination="qFc-ez-KhF" id="Yh7-03-Fbu"/>
+                        <outlet property="playAgainButton" destination="gsa-Jg-32r" id="NVO-8L-F78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import XCTest
 
 class ViewControllerUITests: XCTestCase {
     let app = XCUIApplication()
+    
     override func setUp() {
         continueAfterFailure = false
         XCUIApplication().launch()
@@ -92,5 +93,45 @@ class ViewControllerUITests: XCTestCase {
         let newScore = numberButton.label
         XCTAssertEqual(newScore, "15")
     }
+    
+    func testPlayAgainButtonHiddenDefault() {
+        let playAgainButton = app.buttons["playAgain"]
+        
+        XCTAssertEqual(playAgainButton.exists, false, "Play again button default is hidden")
+    }
+    
+    func testPlayAgainButtonShowWhenUserWrongInput() {
+        let playAgainButton = app.buttons["playAgain"]
+        let fizzButton = app.buttons["fizzButton"]
+        
+        fizzButton.tap()
+        
+        XCTAssertEqual(playAgainButton.exists, true, "Show play again button when user mistake/lose")
+    }
+    
 
+    func testPlayAgainButtonShowWhenUserWrongInput2() {
+        let playAgainButton = app.buttons["playAgain"]
+        let fizzButton = app.buttons["fizzButton"]
+        
+        playTo14()
+        fizzButton.tap()
+        
+        XCTAssertEqual(playAgainButton.exists, true, "Show play again button when user mistake/lose")
+    }
+    
+    func testTapPlayAgainButtonZeroScore() {
+        let playAgainButton = app.buttons["playAgain"]
+        let numberButton = app.buttons["numberButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        numberButton.tap()
+        
+        playAgainButton.tap()
+        
+        let score = numberButton.label
+        XCTAssertEqual(score, "0")
+    }
+    
 }
