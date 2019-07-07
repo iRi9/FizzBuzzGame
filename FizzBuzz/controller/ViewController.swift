@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     
     @IBAction func playAgainTapped(_ sender: UIButton) {
         game = Game()
+        gameScore = game?.score
         toggleGameState(isHidden: true)
     }
     
