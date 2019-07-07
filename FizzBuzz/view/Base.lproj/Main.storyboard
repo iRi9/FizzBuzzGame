@@ -99,6 +99,12 @@
                                 <color key="textColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="loseLabel" text="You lose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUW-e9-xei">
+                                <rect key="frame" x="100" y="68" width="175" height="62"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -107,6 +113,8 @@
                             <constraint firstItem="QVr-Ut-VYe" firstAttribute="top" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="231" id="Fc1-pj-Zg4"/>
                             <constraint firstItem="Tuy-Bg-Tdf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lay-MZ-2bz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tuy-Bg-Tdf" secondAttribute="trailing" constant="14" id="Rna-cz-rNp"/>
+                            <constraint firstItem="DUW-e9-xei" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Yt8-uu-pDF"/>
+                            <constraint firstItem="DUW-e9-xei" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Z1i-ei-FSa"/>
                             <constraint firstItem="QVr-Ut-VYe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ndJ-vo-6B2"/>
                             <constraint firstItem="QVr-Ut-VYe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tmI-Q3-JUp"/>
                             <constraint firstItem="QVr-Ut-VYe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xCn-YE-cYK"/>
@@ -117,6 +125,7 @@
                         <outlet property="buzzButton" destination="PqI-KO-2n9" id="gGp-bS-YnG"/>
                         <outlet property="fizzButton" destination="Or8-qm-yOR" id="kjo-Yg-bqo"/>
                         <outlet property="fizzBuzzButton" destination="nrR-04-hD3" id="vVG-lO-Agd"/>
+                        <outlet property="loseLabel" destination="DUW-e9-xei" id="g4X-jr-XF7"/>
                         <outlet property="numberButton" destination="qFc-ez-KhF" id="Yh7-03-Fbu"/>
                         <outlet property="playAgainButton" destination="gsa-Jg-32r" id="NVO-8L-F78"/>
                     </connections>

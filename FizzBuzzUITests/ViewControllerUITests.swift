@@ -134,4 +134,44 @@ class ViewControllerUITests: XCTestCase {
         XCTAssertEqual(score, "0")
     }
     
+    func testHidePlayAgainButtonWhenUserTappedPlayAgainButton() {
+        let playAgainButton = app.buttons["playAgain"]
+        let numberButton = app.buttons["numberButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        numberButton.tap()
+        
+        playAgainButton.tap()
+        
+        XCTAssertEqual(playAgainButton.exists, false, "Play again button gone when user tapped it")
+        
+    }
+    
+    func testOnDefaultLoseLabelHidden() {
+        let loseLabel = app.staticTexts["You lose"]
+        XCTAssertEqual(loseLabel.exists, false, "The default lose label is hidden")
+    }
+    
+    func testShowLoseLabelOnUserWrongInput() {
+        let fizzButton = app.buttons["fizzButton"]
+        let loseLabel = app.staticTexts["You lose"]
+        
+        fizzButton.tap()
+        
+        XCTAssertEqual(loseLabel.exists, true, "Show lose label when use input wrong")
+    }
+    
+    func testHideLoseLabelWhenUserTapPlayAgain() {
+        let fizzButton = app.buttons["fizzButton"]
+        let playAgainButton = app.buttons["playAgain"]
+        let loseLabel = app.staticTexts["You lose"]
+        
+        fizzButton.tap()
+        playAgainButton.tap()
+        
+        XCTAssertEqual(loseLabel.exists, false, "Hide lose label when user play again")
+        
+    }
+    
 }

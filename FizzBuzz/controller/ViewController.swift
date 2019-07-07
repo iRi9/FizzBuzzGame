@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var buzzButton: UIButton!
     @IBOutlet var fizzBuzzButton: UIButton!
     @IBOutlet var playAgainButton: UIButton!
+    @IBOutlet var loseLabel: UILabel!
     
 
     var gameScore: Int? {
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
         game = Game()
         guard let checkedGame = game else { return }
         gameScore = checkedGame.score
-        playAgainButton.isHidden = true
+        toggleGameState(isHidden: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
         guard let unwrappedGame = game else { return }
         
         let response = unwrappedGame.play(move: move)
-        playAgainButton.isHidden = response.right
+        toggleGameState(isHidden: response.right)
         gameScore = response.score
     }
 
@@ -62,6 +63,12 @@ class ViewController: UIViewController {
     
     @IBAction func playAgainTapped(_ sender: UIButton) {
         gameScore = 0
+        toggleGameState(isHidden: true)
+    }
+    
+    func toggleGameState(isHidden: Bool) {
+        playAgainButton.isHidden = isHidden
+        loseLabel.isHidden = isHidden
     }
     
 }
