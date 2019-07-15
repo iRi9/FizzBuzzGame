@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         game = Game()
         guard let checkedGame = game else { return }
         gameScore = checkedGame.score
-        toggleGameState(isHidden: true)
+        toggleGame(state: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         guard let unwrappedGame = game else { return }
         
         let response = unwrappedGame.play(move: move)
-        toggleGameState(isHidden: response.right)
+        toggleGame(state: response.right)
         gameScore = response.score
     }
 
@@ -64,12 +64,16 @@ class ViewController: UIViewController {
     @IBAction func playAgainTapped(_ sender: UIButton) {
         game = Game()
         gameScore = game?.score
-        toggleGameState(isHidden: true)
+        toggleGame(state: true)
     }
     
-    func toggleGameState(isHidden: Bool) {
-        playAgainButton.isHidden = isHidden
-        loseLabel.isHidden = isHidden
+    func toggleGame(state: Bool) {
+        playAgainButton.isHidden = state
+        loseLabel.isHidden = state
+        numberButton.isEnabled = state
+        fizzButton.isEnabled = state
+        buzzButton.isEnabled = state
+        fizzBuzzButton.isEnabled = state
     }
     
 }

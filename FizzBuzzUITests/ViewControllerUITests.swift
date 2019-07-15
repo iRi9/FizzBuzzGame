@@ -94,6 +94,16 @@ class ViewControllerUITests: XCTestCase {
         XCTAssertEqual(newScore, "15")
     }
     
+    func testStopGameWhenUserWrongInput() {
+        let numberButton = app.buttons["numberButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        numberButton.tap()
+        
+        XCTAssertEqual(numberButton.isEnabled, false, "When user lose any button can't tap")
+    }
+    
     func testPlayAgainButtonHiddenDefault() {
         let playAgainButton = app.buttons["playAgain"]
         
